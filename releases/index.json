@@ -1,8 +1,21 @@
 {
- "generated": "2026-11-17T19:14:38Z",
+ "generated": "2026-11-17T23:40:41Z",
  "note": "Source: Anthropic's official CHANGELOG.md (https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm publish times, synced daily. Original text © Anthropic. Dates and times are UTC. Curated by @ Xiaoyu Gao: https://github.com/gaoxiaoyu1228/claude-code-changelog-calendar",
- "latest": "2.1.326",
+ "latest": "2.1.327",
  "releases": [
+  {
+   "version": "2.1.327",
+   "date": "2026-11-17",
+   "published": "2026-11-17T20:33:19.976Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.327",
+   "counts": {
+    "new": 8,
+    "improved": 56,
+    "fixed": 95,
+    "other": 14
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.327.json"
+  },
   {
    "version": "2.1.326",
    "date": "2026-11-16",
@@ -354,16 +367,6 @@
     "fixed": 64
    },
    "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.292.json"
-  },
-  {
-   "version": "2.1.291",
-   "date": "2026-10-06",
-   "published": "2026-10-06T03:32:36.856Z",
-   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.291",
-   "counts": {
-    "fixed": 2
-   },
-   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.291.json"
   }
  ],
  "full_history": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/data/all.json"
