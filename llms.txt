@@ -21,7 +21,7 @@ This file is the guide for agents and scripts. Everything below is public JSON o
 - `cards/<version>.png` / `cards/<version>.zh.png`: PNG summary card of one version (newest 30 versions). The URL never changes.
 
 ## Fields
-- `type` is one of: new, improved, fixed, removed, other. Entries are grouped in that order.
+- `type` is one of: new, improved, fixed, removed, other. Entries are grouped in that order. The value `new` is shown as "Added" on the page, matching the wording of the official changelog.
 - `date` is the UTC day of the npm publish time; `published` is the exact ISO time (UTC).
 - `counts` lists only the types that have entries.
 - `en` is the original text; `zh` is the Chinese translation.
