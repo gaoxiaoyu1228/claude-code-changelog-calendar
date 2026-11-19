@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="705" viewBox="0 0 960 705" role="img" aria-label="Claude Code v2.1.328" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC','Noto Sans CJK SC',Helvetica,Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="705" viewBox="0 0 960 705" role="img" aria-label="Claude Code v2.1.329" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC','Noto Sans CJK SC',Helvetica,Arial,sans-serif">
 <rect x=".5" y=".5" width="959" height="704" rx="12" fill="#fff" stroke="#e4e2dc"/>
 <text x="20" y="30" font-size="13" fill="#6b6a66">Claude Code 最新版本</text>
-<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.328</text>
-<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-18 · 23:09 UTC</text>
-<rect x="20" y="102" width="51" height="22" rx="5" fill="#c8e8d2"/><text x="28" y="117" font-size="12" fill="#1d6b3f">新增 7</text>
-<rect x="76.8" y="102" width="58" height="22" rx="5" fill="#cddff7"/><text x="84.8" y="117" font-size="12" fill="#1f5fb8">改进 35</text>
-<rect x="140.56" y="102" width="58" height="22" rx="5" fill="#f6e1ad"/><text x="148.56" y="117" font-size="12" fill="#8a5a00">修复 78</text>
-<rect x="204.32" y="102" width="58" height="22" rx="5" fill="#e2e0da"/><text x="212.32" y="117" font-size="12" fill="#5f5e5a">其他 24</text>
+<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.329</text>
+<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-19 · 18:40 UTC</text>
+<rect x="20" y="102" width="51" height="22" rx="5" fill="#c8e8d2"/><text x="28" y="117" font-size="12" fill="#1d6b3f">新增 6</text>
+<rect x="76.8" y="102" width="58" height="22" rx="5" fill="#cddff7"/><text x="84.8" y="117" font-size="12" fill="#1f5fb8">改进 24</text>
+<rect x="140.56" y="102" width="58" height="22" rx="5" fill="#f6e1ad"/><text x="148.56" y="117" font-size="12" fill="#8a5a00">修复 74</text>
+<rect x="204.32" y="102" width="51" height="22" rx="5" fill="#f6cdc9"/><text x="212.32" y="117" font-size="12" fill="#a32d2d">移除 1</text>
+<rect x="261.12" y="102" width="58" height="22" rx="5" fill="#e2e0da"/><text x="269.12" y="117" font-size="12" fill="#5f5e5a">其他 25</text>
 <text x="20" y="160" font-size="15" font-weight="600" fill="#1f1f1f">2026 年 11 月</text>
 <text x="83.1" y="187" font-size="12" fill="#6b6a66" text-anchor="middle">日</text>
 <text x="215.4" y="187" font-size="12" fill="#6b6a66" text-anchor="middle">一</text>
@@ -139,9 +140,8 @@
 <text x="305.6" y="469" font-size="10" fill="#8a5a00">修复 95</text>
 <rect x="347.4" y="458" width="42.8" height="15" rx="4" fill="#e2e0da"/>
 <text x="351.4" y="469" font-size="10" fill="#5f5e5a">其他 14</text>
-<rect x="417.9" y="397" width="124.3" height="99" rx="10" fill="#f3e3dc" stroke="#c96442" stroke-width="2"/>
+<rect x="417.4" y="396.5" width="125.3" height="100.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="423.9" y="418" font-size="13" fill="#1f1f1f" font-weight="600">18</text>
-<text x="445.4" y="417" font-size="10" font-weight="700" letter-spacing=".6" fill="#c96442">NEW</text>
 <rect x="505.0" y="403" width="31.1" height="18" rx="9" fill="#c96442"/><text x="520.6" y="416" font-size="11" fill="#fff" text-anchor="middle">144</text>
 <text x="423.9" y="436" font-size="11"><tspan fill="#c96442">• </tspan><tspan fill="#c96442" font-weight="600">v2.1.328</tspan></text>
 <rect x="433.9" y="441" width="37.0" height="15" rx="4" fill="#c8e8d2"/>
@@ -152,8 +152,21 @@
 <text x="437.9" y="469" font-size="10" fill="#8a5a00">修复 78</text>
 <rect x="479.7" y="458" width="42.8" height="15" rx="4" fill="#e2e0da"/>
 <text x="483.7" y="469" font-size="10" fill="#5f5e5a">其他 24</text>
-<rect x="549.6" y="396.5" width="125.3" height="100.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
-<text x="556.1" y="418" font-size="13" fill="#6b6a66">19</text>
+<rect x="550.1" y="397" width="124.3" height="99" rx="10" fill="#f3e3dc" stroke="#c96442" stroke-width="2"/>
+<text x="556.1" y="418" font-size="13" fill="#1f1f1f" font-weight="600">19</text>
+<text x="577.7" y="417" font-size="10" font-weight="700" letter-spacing=".6" fill="#c96442">NEW</text>
+<rect x="637.3" y="403" width="31.1" height="18" rx="9" fill="#c96442"/><text x="652.9" y="416" font-size="11" fill="#fff" text-anchor="middle">130</text>
+<text x="556.1" y="436" font-size="11"><tspan fill="#c96442">• </tspan><tspan fill="#c96442" font-weight="600">v2.1.329</tspan></text>
+<rect x="566.1" y="441" width="37.0" height="15" rx="4" fill="#c8e8d2"/>
+<text x="570.1" y="452" font-size="10" fill="#1d6b3f">新增 6</text>
+<rect x="606.1" y="441" width="42.8" height="15" rx="4" fill="#cddff7"/>
+<text x="610.1" y="452" font-size="10" fill="#1f5fb8">改进 24</text>
+<rect x="566.1" y="458" width="42.8" height="15" rx="4" fill="#f6e1ad"/>
+<text x="570.1" y="469" font-size="10" fill="#8a5a00">修复 74</text>
+<rect x="611.9" y="458" width="37.0" height="15" rx="4" fill="#f6cdc9"/>
+<text x="615.9" y="469" font-size="10" fill="#a32d2d">移除 1</text>
+<rect x="566.1" y="475" width="42.8" height="15" rx="4" fill="#e2e0da"/>
+<text x="570.1" y="486" font-size="10" fill="#5f5e5a">其他 25</text>
 <rect x="681.9" y="396.5" width="125.3" height="100.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="688.4" y="418" font-size="13" fill="#6b6a66">20</text>
 <rect x="814.2" y="396.5" width="125.3" height="100.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
