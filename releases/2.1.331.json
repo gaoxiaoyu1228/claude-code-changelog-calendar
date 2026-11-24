@@ -1,0 +1,689 @@
+{
+ "version": "2.1.331",
+ "date": "2026-11-23",
+ "published": "2026-11-23T18:36:26.468Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.331",
+ "counts": {
+  "new": 8,
+  "improved": 10,
+  "fixed": 32,
+  "other": 85
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added Code Mode support in terminal sessions on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry and Claude Platform on AWS",
+   "zh": "在 AWS 上的 Amazon Bedrock、Google Cloud 代理平台、Microsoft Foundry 和 Claude Platform 上的终端会话中添加了代码模式支持"
+  },
+  {
+   "type": "new",
+   "en": "Added `oidc.groups_jsonpath` to the Claude apps gateway, to read groups from the matching entries of a list of objects with a small subset of JSONPath (RFC 9535)",
+   "zh": "将`oidc.groups_jsonpath`添加到 Claude 应用程序网关，以从具有 JSONPath 小子集的对象列表的匹配条目中读取组（RFC 9535）"
+  },
+  {
+   "type": "new",
+   "en": "Added an API connectivity section to `claude doctor` that reports whether the API can be reached, with the HTTP status or the error, or says why it wasn't tested",
+   "zh": "在`claude doctor`中添加了 API 连接部分，报告是否可以访问 API、HTTP 状态或错误，或者说明为什么未测试它"
+  },
+  {
+   "type": "new",
+   "en": "Added a notice when tap-mode voice dictation stops by itself, after 15 seconds without recognized speech or at its 2-minute limit",
+   "zh": "添加了当点击模式语音听写在 15 秒内没有识别到语音或达到 2 分钟限制后自行停止时的通知"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION` to ask for uncompressed model responses behind a proxy that cuts compressed ones off; not advised yet for self-hosted runners or Remote Control",
+   "zh": "添加了`CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION`以请求代理后面的未压缩模型响应，该代理会切断压缩响应；尚不建议用于自托管运行程序或远程控制"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_GATEWAY_IDP_CONNECT_BY_HOSTNAME=1` for Claude apps gateways: with `oidc.use_proxy: true`, sign-in requests hand the proxy an `https` IdP's hostname even with `NO_PROXY` set",
+   "zh": "为 Claude 应用程序网关添加了`CLAUDE_GATEWAY_IDP_CONNECT_BY_HOSTNAME=1`：使用`oidc.use_proxy: true`，登录请求会将`https`IdP 的主机名传递给代理，即使设置了`NO_PROXY`"
+  },
+  {
+   "type": "new",
+   "en": "Added `gen_ai.usage.*`, `gen_ai.response.model` and `gen_ai.operation.name` to `claude_code.llm_request` trace spans; `gen_ai.usage.input_tokens` includes prompt cache tokens",
+   "zh": "将`gen_ai.usage.*`、`gen_ai.response.model`和`gen_ai.operation.name`添加到`claude_code.llm_request`跟踪范围； `gen_ai.usage.input_tokens` 包含提示缓存令牌"
+  },
+  {
+   "type": "new",
+   "en": "Added `optionalDependencies` to plugin manifests: plugins that install with the plugin listing them and can be disabled or uninstalled on their own",
+   "zh": "在插件清单中添加了“可选依赖项”：与列出它们的插件一起安装的插件，可以自行禁用或卸载"
+  },
+  {
+   "type": "improved",
+   "en": "Improved typing speed in screen reader mode, most of all in long sessions",
+   "zh": "提高了屏幕阅读器模式下的打字速度，尤其是在长时间会话中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved start-up time: a session started soon after another no longer waits for the model list, and one outside a git repository without `.claude/settings.local.json` no longer waits on git",
+   "zh": "改进的启动时间：一个接着一个启动的会话不再等待模型列表，并且 git 存储库外部没有 `.claude/settings.local.json` 的会话不再等待 git"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the plugin auto-update notice to name plugins it newly installs as dependencies, separately from updated plugins",
+   "zh": "改进了插件自动更新通知，将新安装的插件命名为依赖项，与更新的插件分开"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Code Mode tool search to show more of an MCP tool's description, with its limits, formats and defaults",
+   "zh": "改进了代码模式工具搜索，以显示 MCP 工具的更多描述及其限制、格式和默认值"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Console sign-in link shown by /login and `claude auth login --console`: it is now much shorter",
+   "zh": "改进了 /login 和 `claude auth login --console` 显示的控制台登录链接：现在更短了"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Claude's list of your artifacts: it now marks web pages, so Claude is less likely to try opening one with the Claude Docs connector",
+   "zh": "改进了克劳德的工件列表：它现在标记网页，因此克劳德不太可能尝试使用克劳德文档连接器打开网页"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the folder trust prompts in short terminals: fullscreen `/cd` and `/add-dir` show their choices in fewer rows, and the prompt at launch keeps the folder path in view when it has many warnings",
+   "zh": "改进了短终端中的文件夹信任提示：全屏`/cd`和`/add-dir`以更少的行显示它们的选择，并且启动时的提示在出现许多警告时会保留文件夹路径"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the questions for stopping auto-connect in `/ide` and for `/clear`, `/compact` or `/rewind` in a subagent's view to list Yes first; they still start on No, so Down then Enter now answers No",
+   "zh": "将`/ide`中停止自动连接的问题以及子代理视图中`/clear`、`/compact`或`/rewind`的问题更改为首先列出“是”；他们仍然从“否”开始，所以向下然后输入现在回答“否”"
+  },
+  {
+   "type": "improved",
+   "en": "Changed what a `PermissionDenied` hook's `retry: true` tells Claude: make the refused call again only if you asked for that call",
+   "zh": "更改了`PermissionDenied`钩子的`retry: true`告诉 Claude 的内容：仅当您请求该调用时才再次进行被拒绝的调用"
+  },
+  {
+   "type": "improved",
+   "en": "Changed in a future release, on or after November 30, 2026: plugin marketplaces in managed `extraKnownMarketplaces` will auto-update by default. To opt one out, set `\"autoUpdate\": false` on its entry",
+   "zh": "在 2026 年 11 月 30 日或之后的未来版本中进行了更改：托管`extraKnownMarketplaces`中的插件市场将默认自动更新。要选择退出，请在其条目上设置 `\"autoUpdate\": false`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool calls hanging for up to 30 minutes on some malformed replies from a local or WebSocket server",
+   "zh": "修复了来自本地或 WebSocket 服务器的某些格式错误的回复导致 MCP 工具调用挂起长达 30 分钟的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PushNotification telling a headless run, such as a scheduled one, that the terminal was active in its first minute, instead of saying whether a mobile push was requested",
+   "zh": "修复了 PushNotification，告诉无头运行（例如计划的运行）终端在第一分钟内处于活动状态，而不是说明是否请求移动推送"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/install-github-app` skipping the repository step after setup warnings when no repository was found, and Esc not going back from its workflow list and sign-in steps",
+   "zh": "修复了`/install-github-app`在未找到存储库时在设置警告后跳过存储库步骤，并且 Esc 不会从其工作流程列表和登录步骤返回的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed one-line tool results cut with no ellipsis in narrow windows, Markdown stars in the Auto mode tab of /permissions, and a hook's reason to stop a forked skill showing twice",
+   "zh": "修复了在狭窄窗口中没有省略号的单行工具结果剪切、/permissions 的自动模式选项卡中的 Markdown 星号以及钩子阻止分叉技能显示两次的原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/diff` hiding its key hints and not selecting files in windows of 24 to 26 rows, and leaving out files added with `git add -N` in a repository with no commits",
+   "zh": "修复了`/diff`隐藏其关键提示，并且不在 24 到 26 行的窗口中选择文件，并在没有提交的存储库中遗漏使用`git add -N`添加的文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the first-run theme list showing too few themes in short windows, and /usage and other tall screens coming out garbled there",
+   "zh": "修复了首次运行的主题列表在短窗口中显示的主题太少，以及 /usage 和其他高屏幕出现乱码的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/bug` in fullscreen hiding its Yes and No answers behind a long report, and Yes staying out of view in very short windows",
+   "zh": "修复了全屏中的`/bug`，将其“是”和“否”答案隐藏在长报告后面，并且“是”在非常短的窗口中保持在视图之外"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed /compact and auto-compact sometimes losing part of the conversation summary when the summary quoted certain XML tags",
+   "zh": "修复了当摘要引用某些 XML 标签时，/compact 和自动压缩有时会丢失部分对话摘要的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude not being told when permission rules on the Agent tool dropped its queued message to a subagent that had already ended",
+   "zh": "修复了当代理工具上的权限规则将其排队消息丢弃到已结束的子代理时，克劳德没有被告知的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Remote Control message sometimes showing above the reply that was finishing when it was sent",
+   "zh": "修复了远程控制消息有时会显示在发送时正在完成的回复上方"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Stop hooks that read the transcript missing the last reply in Claude Desktop; SubagentStop hooks now wait for it too",
+   "zh": "修复了读取 Claude Desktop 中缺少最后回复的记录的 Stop 挂钩； SubagentStop 挂钩现在也在等待它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed turns and subagents failing in cloud sessions, or timing out on long replies elsewhere, when a reply went silent while Claude was still thinking; Claude Code now tries the request once more",
+   "zh": "修复了云会话中的回合和子代理失败的问题，或者当克劳德仍在思考时回复沉默时在其他地方的长回复超时的问题；克劳德·科德现在再次尝试该请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc and Stop waiting about a minute or more when the contents of a cloud or network file that Claude is reading stall",
+   "zh": "修复了当 Claude 正在读取的云或网络文件的内容停滞时，Esc 和 Stop 等待大约一分钟或更长时间"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Code Mode sessions resumed with `--resume` or `--continue` in another permission mode losing thinking and the prompt cache; one begun in a mode that asks keeps that mode's limits on scripts",
+   "zh": "修复了在另一种权限模式下使用`--resume`或`--continue`恢复的代码模式会话丢失思考和提示缓存的问题；以一种模式开始，要求保留该模式对脚本的限制"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Code Mode sending a request about every second when a `!` or slash command was typed while a script was running",
+   "zh": "修复了在脚本运行时键入`!`或斜杠命令时代码模式大约每秒发送一次请求的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an interrupted or failed plugin update leaving a partial plugin folder that later loaded with skills or other components missing (anthropics/claude-code#102186)",
+   "zh": "修复了插件更新中断或失败导致部分插件文件夹稍后加载技能或其他组件丢失的问题 (anthropics/claude-code#102186)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude failing to read a notebook that has a null output or an error output with no traceback",
+   "zh": "修复了克劳德无法读取具有空输出或没有回溯的错误输出的笔记本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rewind deleting files after a restore had failed",
+   "zh": "修复了恢复失败后倒回删除文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode sometimes refusing Claude's call to stop a /loop, which left the next wake-up to fire",
+   "zh": "修复了自动模式有时会拒绝 Claude 停止 /loop 的调用，从而导致下一次唤醒的情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Workflow agent's background shells and MCP servers sometimes being left running after it handed back its report",
+   "zh": "修复了工作流代理的后台 shell 和 MCP 服务器有时在交回报告后仍然运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude plugin install`, `marketplace add` and similar commands hanging with no output when managed settings needed an approval that could not be asked for",
+   "zh": "修复了当托管设置需要无法请求的批准时，`claude plugin install`、`marketplace add`和类似命令挂起且没有输出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a permission rule on a subagent's model, such as `Agent(model:*)`, blocking Claude's follow-up message to a subagent started on this version with no model named",
+   "zh": "修复了子代理模型的权限规则，例如`Agent(model:*)`，阻止克劳德向在此版本上启动且没有命名模型的子代理发送后续消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PermissionRequest hooks not saving `Skill(name:*)` allow rules outside local settings",
+   "zh": "修复了 PermissionRequest 挂钩不保存 `Skill(name:*)` 允许本地设置之外的规则的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Ask your admin\" asking to raise your own limit when your team's pooled group budget blocked you, and saying \"Request sent\" when an admin had approved your request in the last few minutes",
+   "zh": "修复了当您的团队的集体预算阻止您时，“询问您的管理员”要求提高您自己的限制，并在管理员在过去几分钟内批准您的请求时说“请求已发送”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Code Mode losing the middle of a long script output; Claude now gets a path to the uncut text (anthropics/claude-code#111373)",
+   "zh": "修复了代码模式丢失长脚本输出的中间部分的问题；克劳德现在获得了未剪切文本的路径（anthropics/claude-code#111373）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hold-to-talk dictation stopping early and losing words when Claude Code was busy",
+   "zh": "修复了当克劳德·代码忙碌时，保持通话听写提前停止并丢失单词的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Code Mode with `--bare` not telling Claude what its scripts can call",
+   "zh": "修复了带有`--bare`的代码模式不告诉 Claude 它的脚本可以调用什么"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when a custom API endpoint returned a tool call with no tool name; the call now fails with an error and the session continues",
+   "zh": "修复了自定义 API 端点返回没有工具名称的工具调用时崩溃的问题；现在调用因错误而失败，会话继续"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the CLI freezing on some replies, and quoted text sometimes going missing or showing twice",
+   "zh": "修复了 CLI 冻结某些回复以及引用的文本有时会丢失或显示两次的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed @-mentions written as `@file#10-12` attaching the whole file instead of those lines",
+   "zh": "修复了写为`@file#10-12`的@提及，附加整个文件而不是那些行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude misreading a pasted artifact invitation link; it now asks you to accept the invitation and paste the artifact's own link",
+   "zh": "修复了克劳德误读粘贴的神器邀请链接的问题；现在它会要求您接受邀请并粘贴工件自己的链接"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandboxed Bash commands sometimes failing to start on a full temp disk, for sandboxes whose file rules keep commands out of the temp directory",
+   "zh": "修复了沙盒 Bash 命令有时无法在完整临时磁盘上启动的问题，因为沙盒的文件规则将命令保留在临时目录之外"
+  },
+  {
+   "type": "other",
+   "en": "Windows: Fixed file writes on FAT32 and exFAT drives asking for permission every time in some plugin sessions",
+   "zh": "Windows：修复了在某些插件会话中每次在 FAT32 和 exFAT 驱动器上写入文件时都会请求许可的问题"
+  },
+  {
+   "type": "other",
+   "en": "Windows: Fixed `/desktop` downloading the older Claude Desktop installer, and asking for an update when an older install's folder was left behind",
+   "zh": "Windows：修复了`/desktop`下载较旧的 Claude Desktop 安装程序，并在旧安装的文件夹被遗忘时要求更新的问题"
+  },
+  {
+   "type": "other",
+   "en": "Windows: Fixed a possible crash when the machine is almost out of memory",
+   "zh": "Windows：修复了机器几乎内存不足时可能发生的崩溃"
+  },
+  {
+   "type": "other",
+   "en": "Windows: Fixed Claude Code refusing to start when managed settings in the registry contain non-ASCII characters such as Japanese (anthropics/claude-code#93280)",
+   "zh": "Windows：修复了当注册表中的托管设置包含日语等非 ASCII 字符时 Claude Code 拒绝启动的问题 (anthropics/claude-code#93280)"
+  },
+  {
+   "type": "other",
+   "en": "Windows: Fixed Remote Control clients showing no steps for a new subagent",
+   "zh": "Windows：修复了远程控制客户端不显示新子代理的步骤"
+  },
+  {
+   "type": "other",
+   "en": "Windows: Improved the speed of the first Bash command in a session on machines with no custom shell start-up files",
+   "zh": "Windows：提高了没有自定义 shell 启动文件的计算机上会话中第一个 Bash 命令的速度"
+  },
+  {
+   "type": "other",
+   "en": "Windows: Changed start-up with managed settings in the registry: check them before upgrading, as an `HKLM` policy outranks `managed-settings.json` and a broken value can stop the start",
+   "zh": "Windows：使用注册表中的托管设置更改了启动：在升级之前检查它们，因为`HKLM`策略优先于`managed-settings.json`，并且损坏的值可能会停止启动"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Added a warning and a link to the revoke page when you log out and the request to revoke your claude.ai login isn't confirmed",
+   "zh": "[VSCode] 当您注销且撤销 claude.ai 登录请求未得到确认时，添加了警告和指向撤销页面的链接"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Added a notice before sending a very large selection or attached text file, and advice under \"Prompt is too long\" that names the large part and what to do next",
+   "zh": "[VSCode] 在发送非常大的选择或附加文本文件之前添加了一条通知，并在“提示太长”下添加了建议，其中列出了大部分内容以及下一步要做什么"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Added \"Add Cell to Chat\" to the notebook cell menu, which attaches a cell with its outputs or error",
+   "zh": "[VSCode] 在笔记本单元菜单中添加了“将单元添加到聊天”，该菜单附加单元及其输出或错误"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Added \"Fix with Claude Code\" as a quick fix for errors and warnings and to failed tests in the test peek and the Test Results view, which puts the problem into the chat box",
+   "zh": "[VSCode] 添加了“使用 Claude Code 进行修复”作为错误和警告以及测试查看和测试结果视图中失败测试的快速修复，这会将问题放入聊天框中"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Added \"Add to Chat\" to the right-click menu of changed files in the Source Control view",
+   "zh": "[VSCode] 在源代码管理视图中已更改文件的右键菜单中添加了“添加到聊天”"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Added \"Resolve Merge Conflicts\" to the editor title of a file with merge conflicts and to the Merge Changes group in Source Control",
+   "zh": "[VSCode] 将“解决合并冲突”添加到具有合并冲突的文件的编辑器标题以及源代码管理中的“合并更改”组"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed raw tags for selected code under a reworded prompt, the mode button flashing Manual, the slash menu hiding its highlighted row, a broken sign-in image, and a blinking Accept/Reject bar",
+   "zh": "[VSCode] 修复了在改写提示下所选代码的原始标签、模式按钮闪烁手动、斜杠菜单隐藏其突出显示的行、损坏的登录图像以及闪烁的接受/拒绝栏"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed a forked conversation overwriting the original conversation's plan file; a fork or rewind that can't copy the plan now shows a warning",
+   "zh": "[VSCode] 修复了分叉对话覆盖原始对话计划文件的问题；无法复制计划的分叉或倒带现在会显示警告"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed voice dictation saying no speech was recognized when its connection closed or never opened; it now says the connection was lost or couldn't connect",
+   "zh": "[VSCode] 修复了当连接关闭或从未打开时语音听写无法识别语音的问题；现在显示连接已丢失或无法连接"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed an unsent side question being lost when its panel closes",
+   "zh": "[VSCode] 修复了面板关闭时未发送的附带问题丢失的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Escape stopping Claude after renaming a session, and typing going nowhere after closing the session history with Escape",
+   "zh": "[VSCode] 修复了 Escape 在重命名会话后停止 Claude，以及在使用 Escape 关闭会话历史记录后输入无处可去的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Rename, Mark as Unread and Add to Group saying \"still connecting\" on a tab that resumed a session from its history",
+   "zh": "[VSCode] 修复了从历史记录中恢复会话的选项卡上的重命名、标记为未读和添加到组中显示“仍在连接”的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed wide tables and long paths cut off, long errors hiding their close button, errors out of view in the Add MCP server form and Chrome dialog, and plugin pictures ignoring the editor theme",
+   "zh": "[VSCode] 修复了宽表和长路径被切断、隐藏关闭按钮的长错误、添加 MCP 服务器表单和 Chrome 对话框中视图之外的错误以及忽略编辑器主题的插件图片"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed later prompts and the message box covering the Rewind code dialog, and focus jumping from \"Never mind\" to \"Rewind\" when it finishes checking files",
+   "zh": "[VSCode] 修复了稍后的提示和覆盖“倒带”代码对话框的消息框，以及完成检查文件时焦点从“没关系”跳到“倒带”的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the command menu keeping an earlier match highlighted while you type more in its filter, so Enter could run the wrong row",
+   "zh": "[VSCode] 修复了当您在过滤器中输入更多内容时，命令菜单会突出显示较早的匹配项，因此 Enter 可能会运行错误的行"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the @ menu showing \"No files found\" before its first search results arrived, or when it couldn't search all files of a very large workspace, which it now says",
+   "zh": "[VSCode] 修复了 @ 菜单在第一个搜索结果到达之前或无法搜索非常大的工作区的所有文件时显示“未找到文件”的问题（现在显示为“未找到文件”）"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Escape stopping Claude at a Remove or Delete confirmation in MCP, Hooks and Memory dialogs, on a side question panel's button or link, and on the Bookmarks button with its panel open",
+   "zh": "[VSCode] 修复了 Escape 在 MCP、Hooks 和 Memory 对话框、侧面问题面板的按钮或链接以及面板打开的书签按钮上的“删除”或“删除”确认时停止 Claude 的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed empty boxes showing instead of the + and − signs in diffs (anthropics/claude-code#73069)",
+   "zh": "[VSCode] 修复了差异中显示而不是 + 和 − 符号的空框 (anthropics/claude-code#73069)"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the chat no longer following Claude's reply after the panel was resized, or hidden and shown again",
+   "zh": "[VSCode] 修复了调整面板大小或隐藏并再次显示后聊天不再关注 Claude 的回复的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed a chat left in bypass permissions mode reopening in Auto mode instead of your initial permission mode when settings disable bypass",
+   "zh": "[VSCode] 修复了当设置禁用旁路时，处于旁路权限模式的聊天会以自动模式而不是初始权限模式重新打开"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the chat panel freezing on some CSS code blocks and diffs",
+   "zh": "[VSCode] 修复了聊天面板在某些 CSS 代码块和差异上冻结的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the context usage indicator disappearing after an API error, \"Prompt is too long\", or a slash command",
+   "zh": "[VSCode] 修复了 API 错误、“提示太长”或斜杠命令后上下文使用指示器消失的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed a message queued behind a queued /clear being lost",
+   "zh": "[VSCode] 修复了在排队/清除后面排队的消息丢失的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Manage Plugins losing its search box or showing no message when a search has no match, and not saying that the list of available plugins failed to load",
+   "zh": "[VSCode] 修复了管理插件丢失搜索框或在搜索不匹配时不显示任何消息，并且未提示可用插件列表加载失败的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed proposed changes to notebooks and files with a custom editor opening in a tab with no Accept or Reject that stayed open after the answer",
+   "zh": "[VSCode] 修复了对笔记本和文件的建议更改，其中自定义编辑器在选项卡中打开，没有“接受”或“拒绝”，在答案后保持打开状态"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the spend limit message telling Team and Enterprise members to run `/usage-credits`, which can't send a request to their admin from the panel",
+   "zh": "[VSCode] 修复了告诉团队和企业成员运行`/usage-credits`的支出限制消息，该消息无法从面板向管理员发送请求"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed a written message being wiped by Tab on a command in the \"/\" button's menu or by a click on an onboarding suggestion",
+   "zh": "[VSCode] 修复了通过“/”按钮菜单中的命令上的 Tab 或单击入门建议来擦除书面消息的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Claude continuing to edit files after you rewind code while it is working",
+   "zh": "[VSCode] 修复了在代码运行时回退后克劳德继续编辑文件的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed typed text being lost after /tasks, /copy, /export, a skipped /feedback, or /plan while already in plan mode",
+   "zh": "[VSCode] 修复了在已处于计划模式时在 /tasks、/copy、/export、跳过的 /feedback 或 /plan 后丢失的键入文本"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the question card dropping a typed \"Other\" answer on Ctrl/Cmd+Enter, and sending the word \"Other\" when nothing was typed",
+   "zh": "[VSCode] 修复了问题卡在 Ctrl/Cmd+Enter 上输入“其他”答案时会丢失问题，并在未输入任何内容时发送“其他”一词的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the panel showing \"Something went wrong\" for a conversation in which a gateway sent a tool call with no name",
+   "zh": "[VSCode] 修复了网关发送无名称工具调用的对话中显示“出现问题”的面板"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed unsaved changes being missed, and Claude's edit being overwritten by the next save, in a folder opened through a symlink",
+   "zh": "[VSCode] 修复了通过符号链接打开的文件夹中未保存的更改被遗漏，以及 Claude 的编辑被下一次保存覆盖的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed @-mentions attaching nothing, or another file of the same name, after Claude changed folders with `cd`",
+   "zh": "[VSCode] 修复了 Claude 使用`cd`更改文件夹后，@-mentions 不附加任何内容或附加同名文件的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the arrow keys replacing typed text with an old prompt while selecting, and dropping edits to a recalled prompt",
+   "zh": "[VSCode] 修复了选择时箭头键用旧提示替换键入的文本以及对调用的提示进行编辑的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed an @-mention added while a permission prompt was open being lost",
+   "zh": "[VSCode] 修复了在权限提示打开时添加的 @-mention 丢失的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed shortcuts such as Ctrl+1, Alt+1 or Ctrl+Space answering an open dialog, which could restore files in the rewind confirmation or switch the git branch",
+   "zh": "[VSCode] 修复了 Ctrl+1、Alt+1 或 Ctrl+Space 等快捷键应答打开对话框的问题，可在回退确认中恢复文件或切换 git 分支"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed prompts that start with a file path or code comment being sent without the selected code and having no fork or rewind menu",
+   "zh": "[VSCode] 修复了以文件路径或代码注释开头的提示，在没有选定代码的情况下发送，并且没有分叉或倒带菜单"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed file links in the chat ignoring your editor associations for files in the workspace, except notebooks (anthropics/claude-code#81482)",
+   "zh": "[VSCode] 修复了聊天中的文件链接，忽略工作区中文件的编辑器关联，笔记本除外 (anthropics/claude-code#81482)"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed selected lines staying attached to your next message after their file's tab was closed",
+   "zh": "[VSCode] 修复了选定的行在文件选项卡关闭后仍附加到下一条消息的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed new sessions starting in Edit automatically after pressing Shift+Tab through it to reach Plan mode",
+   "zh": "[VSCode] 修复了按 Shift+Tab 进入计划模式后自动在编辑中启动的新会话"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed an edited command on the permission prompt running without the line breaks that were typed or pasted into it",
+   "zh": "[VSCode] 修复了在运行权限提示时编辑的命令没有键入或粘贴到其中的换行符"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed a newly opened Claude tab not focusing its message box, or taking the keyboard late from the terminal or command palette and sending the typed text as a prompt",
+   "zh": "[VSCode] 修复了新打开的 Claude 选项卡未聚焦其消息框，或者较晚从终端或命令面板使用键盘并发送键入的文本作为提示的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Alt+K line ranges such as `@app.ts#5-10` sending the whole file, or its first 2,000 lines, instead of the selected lines",
+   "zh": "[VSCode] 修复了 Alt+K 行范围，例如 `@app.ts#5-10` 发送整个文件或其前 2,000 行，而不是选定的行"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed diff tabs opening out of order when several subagents wait for approval, and a later edit to the same file cancelling an earlier one",
+   "zh": "[VSCode] 修复了当多个子代理等待批准时差异选项卡打开顺序不正确的问题，以及稍后对同一文件的编辑会取消之前的编辑"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Enter rewriting a message or running a menu action when a `/word` such as the path `/api` stands beside other text, and running a typed slash command without its arguments",
+   "zh": "[VSCode] 修复了当`/word`（例如路径`/api`）位于其他文本旁边并运行不带参数的键入斜杠命令时，Enter 重写消息或运行菜单操作的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Electron apps and extension tests failing to start from Claude, a hook or an MCP server; a wrapper, hook or server that runs VS Code as Node must now set `ELECTRON_RUN_AS_NODE=1`",
+   "zh": "[VSCode] 修复了 Electron 应用程序和扩展测试无法从 Claude、钩子或 MCP 服务器启动的问题；作为节点运行 VS Code 的包装器、挂钩或服务器现在必须设置`ELECTRON_RUN_AS_NODE=1`"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Claude not being told when you reject part of a proposed edit or change it in the diff view before accepting",
+   "zh": "[VSCode] 修复了当您拒绝部分建议编辑或在接受之前在 diff 视图中更改它时 Claude 不会被告知的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Escape on a permission prompt sending a half-typed instruction to Claude instead of cancelling",
+   "zh": "[VSCode] 修复了权限提示中的 Escape 向 Claude 发送半输入指令而不是取消的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Ctrl+J and Ctrl+O in the chat also opening VS Code's terminal or Open File dialog on Windows and Linux",
+   "zh": "[VSCode] 修复了聊天中的 Ctrl+J 和 Ctrl+O 在 Windows 和 Linux 上也会打开 VS Code 的终端或“打开文件”对话框的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the @ menu inserting the wrong file on a quick Tab or Enter, and Enter not sending a prompt that ends in an @word with no matching file",
+   "zh": "[VSCode] 修复了 @ 菜单在快速 Tab 或 Enter 上插入错误文件，并且 Enter 不发送以 @word 结尾且没有匹配文件的提示"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed new Claude tabs staying blank and the side bar failing to load after closing a tab while Claude was still starting",
+   "zh": "[VSCode] 修复了新的 Claude 选项卡保持空白以及在 Claude 仍在启动时关闭选项卡后侧边栏无法加载的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed a quick double click in the panel pressing a button or row that appeared after the first click, or starting a second compaction from the context usage circle",
+   "zh": "[VSCode] 修复了在面板中快速双击按下第一次单击后出现的按钮或行，或从上下文使用圈开始第二次压缩的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed switching models failing with \"Settings file is not valid JSON\" when settings.json is empty or starts with a byte order mark",
+   "zh": "[VSCode] 修复了当 settings.json 为空或以字节顺序标记开头时，切换模型失败并显示“设置文件不是有效的 JSON”的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed memory growing with each fork or rewind of a long conversation until the window was reloaded",
+   "zh": "[VSCode] 修复了内存随着每次分叉或回退长对话而增长的问题，直到重新加载窗口"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed plan comments not showing on the plan approval card in Focus view",
+   "zh": "[VSCode] 修复了焦点视图中计划审批卡上未显示计划注释的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed file links without a line number moving the cursor of an open file to line 1",
+   "zh": "[VSCode] 修复了没有行号的文件链接将打开文件的光标移动到第 1 行的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed a missing notification when a conversation running behind another one in the same panel needs a permission or an answer",
+   "zh": "[VSCode] 修复了当同一面板中另一个对话后面运行的对话需要权限或答案时丢失通知的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Manage Plugins not loading when Claude Code is slow to start or fails to start, so a plugin that blocks startup can be turned off",
+   "zh": "[VSCode] 修复了 Claude Code 启动缓慢或启动失败时 Manage Plugins 无法加载的问题，因此可以关闭阻止启动的插件"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed proposed diffs showing and saving garbled non-ASCII text when `files.encoding` is not UTF-8",
+   "zh": "[VSCode] 修复了当`files.encoding`不是 UTF-8 时显示和保存乱码非 ASCII 文本的建议差异"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed approved edits and writes saving right-to-left marks as literal `\\u200F` escapes on lines with Hebrew, Arabic or Persian text",
+   "zh": "[VSCode] 修复了批准的编辑和写入，将从右到左的标记保存为希伯来语、阿拉伯语或波斯语文本行上的文字`\\u200F`转义符"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed a model pick being ignored for the next message when Claude's process had ended or was still starting",
+   "zh": "[VSCode] 修复了当 Claude 的进程结束或仍在启动时，下一条消息的模型选择被忽略的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed Rewind showing \"No active session\" after Claude's process had ended",
+   "zh": "[VSCode] 修复了 Claude 进程结束后倒带显示“没有活动会话”的问题"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed typing @ leaving a helper process running per tab when no browser is connected, except when Claude in Chrome's service can't be reached",
+   "zh": "[VSCode] 修复了在未连接浏览器时键入 @ 让每个选项卡运行的帮助程序进程的问题，除非无法访问 Chrome 服务中的 Claude"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Fixed the session list opening every transcript at once, which stalled the editor's extensions and could leave sessions out in projects with many sessions",
+   "zh": "[VSCode] 修复了会话列表一次打开每个记录的问题，这会阻止编辑器的扩展，并且可能会在具有多个会话的项目中遗漏会话"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved the time to the first reply in a new folder when the Python extension is installed and the folder has no Python",
+   "zh": "[VSCode] 改进了安装了 Python 扩展且文件夹中没有 Python 时在新文件夹中第一次回复的时间"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved the sign-in screen to say when it opened because a request was refused",
+   "zh": "[VSCode] 改进了登录屏幕，以显示由于请求被拒绝而打开的时间"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved the speed of opening, restoring and switching back to long conversations, most of all with many file edits or where git is slow",
+   "zh": "[VSCode] 提高了打开、恢复和切换回长对话的速度，尤其是在编辑大量文件或 git 速度较慢的情况下"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved responsiveness in long chats: smooth typing and large file writes while a reply streams, faster permission prompts, and far less freezing on send with accessibility support on",
+   "zh": "[VSCode] 改进了长时间聊天中的响应能力：在回复流时流畅打字和大文件写入、更快的权限提示以及通过辅助功能支持减少发送时的冻结情况"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved startup and memory use: the panel and new chat tabs open faster, a first message in a new tab is answered sooner, and on Pro and Max plans the folder trust dialog comes up sooner",
+   "zh": "[VSCode] 改进了启动和内存使用：面板和新聊天选项卡打开速度更快，新选项卡中的第一条消息得到更快回复，在 Pro 和 Max 计划中，文件夹信任对话框更快出现"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved speed in remote windows (SSH, WSL, containers): the panel starts, replies appear and sessions reopen faster",
+   "zh": "[VSCode] 提高了远程窗口（SSH、WSL、容器）的速度：面板启动、回复显示以及会话重新打开速度更快"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved the time to a response for the first message after a chat has been idle for a few minutes on a machine that is low on memory",
+   "zh": "[VSCode] 改进了在内存不足的计算机上聊天闲置几分钟后响应第一条消息的时间"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved how fast chats start, open from history and come back after a restart on slow or antivirus-scanned disks",
+   "zh": "[VSCode] 改进了在慢速磁盘或经过防病毒扫描的磁盘上聊天启动、从历史记录中打开以及重新启动后返回的速度"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved how fast diffs appear in reopened conversations, and removed diff menu entries that did not work",
+   "zh": "[VSCode] 改进了重新打开的对话中差异显示的速度，并删除了不起作用的差异菜单条目"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Improved the @ file menu to list the files of open editor tabs first, the most recently used on top",
+   "zh": "[VSCode] 改进了@文件菜单，首先列出打开的编辑器选项卡的文件，最近使用的位于顶部"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Changed saving a proposed diff to accept it only after you click or type in its proposed (right) side; a notification says when a save is refused or a close with Save applies nothing",
+   "zh": "[VSCode] 更改了保存建议的差异，仅在您单击或输入其建议的（右侧）侧后才接受它；一条通知显示，当保存被拒绝或使用“保存”关闭时，不会执行任何操作"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Changed diffs from a terminal session to open without moving keyboard focus, and beside a file with unsaved changes; to answer, click Accept or use the terminal",
+   "zh": "[VSCode] 将终端会话中的差异更改为在不移动键盘焦点的情况下打开，并位于未保存更改的文件旁边；要回答，请单击“接受”或使用终端"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Changed permission cards to show only Yes and No when `allowManagedPermissionRulesOnly` is set and the card would offer an allow rule; key 2 on those cards now answers No",
+   "zh": "[VSCode] 更改了权限卡，使其在设置了`allowManagedPermissionRulesOnly`并且卡将提供允许规则时仅显示“是”和“否”；这些卡上的键 2 现在回答“否”"
+  },
+  {
+   "type": "other",
+   "en": "[VSCode] Changed a Claude tab to ignore Enter and show a notice when its Find box has lost the keyboard",
+   "zh": "[VSCode] 更改了 Claude 选项卡以忽略 Enter 并在其查找框丢失键盘时显示通知"
+  }
+ ]
+}

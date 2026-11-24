@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="807" viewBox="0 0 960 807" role="img" aria-label="Claude Code v2.1.330" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC','Noto Sans CJK SC',Helvetica,Arial,sans-serif">
-<rect x=".5" y=".5" width="959" height="806" rx="12" fill="#fff" stroke="#e4e2dc"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="853" viewBox="0 0 960 853" role="img" aria-label="Claude Code v2.1.331" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC','Noto Sans CJK SC',Helvetica,Arial,sans-serif">
+<rect x=".5" y=".5" width="959" height="852" rx="12" fill="#fff" stroke="#e4e2dc"/>
 <text x="20" y="30" font-size="13" fill="#6b6a66">Claude Code latest</text>
-<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.330</text>
-<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-20 · 19:16 UTC</text>
-<rect x="20" y="102" width="63" height="22" rx="5" fill="#c8e8d2"/><text x="28" y="117" font-size="12" fill="#1d6b3f">Added 7</text>
-<rect x="89.03999999999999" y="102" width="92" height="22" rx="5" fill="#cddff7"/><text x="97.03999999999999" y="117" font-size="12" fill="#1f5fb8">Improved 23</text>
-<rect x="187.35999999999999" y="102" width="67" height="22" rx="5" fill="#f6e1ad"/><text x="195.35999999999999" y="117" font-size="12" fill="#8a5a00">Fixed 68</text>
-<rect x="260.24" y="102" width="67" height="22" rx="5" fill="#e2e0da"/><text x="268.24" y="117" font-size="12" fill="#5f5e5a">Other 44</text>
+<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.331</text>
+<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-23 · 18:36 UTC</text>
+<rect x="20" y="102" width="63" height="22" rx="5" fill="#c8e8d2"/><text x="28" y="117" font-size="12" fill="#1d6b3f">Added 8</text>
+<rect x="89.03999999999999" y="102" width="92" height="22" rx="5" fill="#cddff7"/><text x="97.03999999999999" y="117" font-size="12" fill="#1f5fb8">Improved 10</text>
+<rect x="187.35999999999999" y="102" width="67" height="22" rx="5" fill="#f6e1ad"/><text x="195.35999999999999" y="117" font-size="12" fill="#8a5a00">Fixed 32</text>
+<rect x="260.24" y="102" width="67" height="22" rx="5" fill="#e2e0da"/><text x="268.24" y="117" font-size="12" fill="#5f5e5a">Other 85</text>
 <text x="20" y="160" font-size="15" font-weight="600" fill="#1f1f1f">November 2026</text>
 <text x="83.1" y="187" font-size="12" fill="#6b6a66" text-anchor="middle">Sun</text>
 <text x="215.4" y="187" font-size="12" fill="#6b6a66" text-anchor="middle">Mon</text>
@@ -165,9 +165,8 @@
 <text x="570.1" y="571" font-size="10" fill="#a32d2d">Removed 1</text>
 <rect x="566.1" y="577" width="50.4" height="15" rx="4" fill="#e2e0da"/>
 <text x="570.1" y="588" font-size="10" fill="#5f5e5a">Other 25</text>
-<rect x="682.4" y="465" width="124.3" height="133" rx="10" fill="#f3e3dc" stroke="#c96442" stroke-width="2"/>
+<rect x="681.9" y="464.5" width="125.3" height="134.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="688.4" y="486" font-size="13" fill="#1f1f1f" font-weight="600">20</text>
-<text x="710.0" y="485" font-size="10" font-weight="700" letter-spacing=".6" fill="#c96442">NEW</text>
 <rect x="769.6" y="471" width="31.1" height="18" rx="9" fill="#c96442"/><text x="785.1" y="484" font-size="11" fill="#fff" text-anchor="middle">142</text>
 <text x="688.4" y="504" font-size="11"><tspan fill="#c96442">• </tspan><tspan fill="#c96442" font-weight="600">v2.1.330</tspan></text>
 <rect x="698.4" y="509" width="47.2" height="15" rx="4" fill="#c8e8d2"/>
@@ -180,24 +179,35 @@
 <text x="702.4" y="571" font-size="10" fill="#5f5e5a">Other 44</text>
 <rect x="814.2" y="464.5" width="125.3" height="134.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="820.7" y="486" font-size="13" fill="#6b6a66">21</text>
-<rect x="20.5" y="605.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
+<rect x="20.5" y="605.5" width="125.3" height="117.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="27.0" y="627" font-size="13" fill="#6b6a66">22</text>
-<rect x="152.8" y="605.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
-<text x="159.3" y="627" font-size="13" fill="#6b6a66">23</text>
-<rect x="285.1" y="605.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
+<rect x="153.3" y="606" width="124.3" height="116" rx="10" fill="#f3e3dc" stroke="#c96442" stroke-width="2"/>
+<text x="159.3" y="627" font-size="13" fill="#1f1f1f" font-weight="600">23</text>
+<text x="180.9" y="626" font-size="10" font-weight="700" letter-spacing=".6" fill="#c96442">NEW</text>
+<rect x="240.4" y="612" width="31.1" height="18" rx="9" fill="#c96442"/><text x="256.0" y="625" font-size="11" fill="#fff" text-anchor="middle">135</text>
+<text x="159.3" y="645" font-size="11"><tspan fill="#c96442">• </tspan><tspan fill="#c96442" font-weight="600">v2.1.331</tspan></text>
+<rect x="169.3" y="650" width="47.2" height="15" rx="4" fill="#c8e8d2"/>
+<text x="173.3" y="661" font-size="10" fill="#1d6b3f">Added 8</text>
+<rect x="169.3" y="667" width="71.6" height="15" rx="4" fill="#cddff7"/>
+<text x="173.3" y="678" font-size="10" fill="#1f5fb8">Improved 10</text>
+<rect x="169.3" y="684" width="50.4" height="15" rx="4" fill="#f6e1ad"/>
+<text x="173.3" y="695" font-size="10" fill="#8a5a00">Fixed 32</text>
+<rect x="169.3" y="701" width="50.4" height="15" rx="4" fill="#e2e0da"/>
+<text x="173.3" y="712" font-size="10" fill="#5f5e5a">Other 85</text>
+<rect x="285.1" y="605.5" width="125.3" height="117.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="291.6" y="627" font-size="13" fill="#6b6a66">24</text>
-<rect x="417.4" y="605.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
+<rect x="417.4" y="605.5" width="125.3" height="117.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="423.9" y="627" font-size="13" fill="#6b6a66">25</text>
-<rect x="549.6" y="605.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
+<rect x="549.6" y="605.5" width="125.3" height="117.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="556.1" y="627" font-size="13" fill="#6b6a66">26</text>
-<rect x="681.9" y="605.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
+<rect x="681.9" y="605.5" width="125.3" height="117.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="688.4" y="627" font-size="13" fill="#6b6a66">27</text>
-<rect x="814.2" y="605.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
+<rect x="814.2" y="605.5" width="125.3" height="117.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
 <text x="820.7" y="627" font-size="13" fill="#6b6a66">28</text>
-<rect x="20.5" y="683.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
-<text x="27.0" y="705" font-size="13" fill="#6b6a66">29</text>
-<rect x="152.8" y="683.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
-<text x="159.3" y="705" font-size="13" fill="#6b6a66">30</text>
-<line x1="20" x2="940" y1="771" y2="771" stroke="#e4e2dc"/>
-<text x="20" y="791" font-size="11" fill="#6b6a66">gaoxiaoyu1228.github.io/claude-code-changelog-calendar</text>
+<rect x="20.5" y="729.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
+<text x="27.0" y="751" font-size="13" fill="#6b6a66">29</text>
+<rect x="152.8" y="729.5" width="125.3" height="71.0" rx="10" fill="#fff" stroke="#e4e2dc" stroke-width="1.0"/>
+<text x="159.3" y="751" font-size="13" fill="#6b6a66">30</text>
+<line x1="20" x2="940" y1="817" y2="817" stroke="#e4e2dc"/>
+<text x="20" y="837" font-size="11" fill="#6b6a66">gaoxiaoyu1228.github.io/claude-code-changelog-calendar</text>
 </svg>
